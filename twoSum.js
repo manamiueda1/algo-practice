@@ -1,6 +1,24 @@
 // twoSum Solution LeetCode
 // https://leetcode.com/problems/two-sum/
 
+// brute force
+
+var twoSum = function(nums, target) {
+    for (let i = 0; i < nums.length; i++){
+        for (let j = i + 1; j < nums.length; j++){
+            if (nums[i] + nums[j] === target){
+                return [i, j]
+            }
+        }
+    }
+    return []
+};
+
+
+
+// twoNumberSum Solution AlgoExpert
+// https://www.algoexpert.io/questions/Two%20Number%20Sum
+
 // brute force O(N)^2
 function twoNumberSum(array, targetSum) {
     // Write your code here.
@@ -39,7 +57,22 @@ function twoNumberSum(array, targetSum) {
 	return []
 }
 
+// hash map
+function twoNumberSum(array, targetSum) {
+	let hash = new Map()
+	
+	for (let i = 0; i < array.length; i++){
+		let ele = array[i];
+		let remainder = targetSum - ele
+		if (remainder in hash){
+			return [ele, remainder]
+		}
+		 else {
+			hash[ele] = true
+		}
+		
+		console.log(hash)
+	}
+	return [];
+}
 
-
-// twoNumberSum Solution AlgoExpert
-// https://www.algoexpert.io/questions/Two%20Number%20Sum

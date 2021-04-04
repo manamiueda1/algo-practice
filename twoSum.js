@@ -14,6 +14,22 @@ var twoSum = function(nums, target) {
     return []
 };
 
+// hash
+
+var twoSum = function(nums, target) {
+    let hash = {}
+    
+    for (let i = 0; i < nums.length; i++){
+        let remainder = target - nums[i];
+        if (remainder in hash){
+            return [hash[remainder], i]
+        } else {
+            hash[nums[i]] = i
+        }
+    }
+      return [];
+  };
+
 
 
 // twoNumberSum Solution AlgoExpert
@@ -36,18 +52,14 @@ function twoNumberSum(array, targetSum) {
 //    Pointer Method
 function twoNumberSum(array, targetSum) {
 	let newArray = array.sort((a, b) => a-b)
-	console.log(newArray)
 	let pointer1 = 0
 	let pointer2 = array.length-1
-	console.log(pointer2)
 	
 	while(pointer1 < pointer2 ){
 		if (newArray[pointer1] + newArray[pointer2] === targetSum) {
-			console.log(newArray[pointer1] + newArray[pointer2])
 			return [newArray[pointer1], newArray[pointer2]]
 		}
 		if(newArray[pointer1] + newArray[pointer2] > targetSum){
-			// console.log(pointer2)
 			pointer2--
 		} 
 		if (newArray[pointer1] + newArray[pointer2] < targetSum){

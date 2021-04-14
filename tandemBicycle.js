@@ -1,3 +1,5 @@
+// algoExpert: https://www.algoexpert.io/questions/Tandem%20Bicycle
+
 function tandemBicycle(redShirtSpeeds, blueShirtSpeeds, fastest) {
     // Write your code here.
       console.log(redShirtSpeeds.sort((a,b) => b-a))

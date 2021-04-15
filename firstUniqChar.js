@@ -1,3 +1,5 @@
+// LeetCode: https://leetcode.com/problems/first-unique-character-in-a-string/submissions/
+
 var firstUniqChar = function(s) {
     let hash = new Map()
   
